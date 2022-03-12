@@ -250,7 +250,14 @@ function parse_style(str){
         }
     }
     else if(style=="creative"){
-        creative(str)
+        let mod_name = match_karg(str, 'selection', 'str', null)
+        if (!mod_name){console.log('no creative mod selection!'); return;}
+        async function loadJs(src) {
+            let Mod = await import(src);
+            creative = new Mod.Creative();
+            creative.start(str)
+        }
+        loadJs(`/examples/creative/${mod_name}.js`)
     }
     else if (style=="grid3d"){
         let gridXZ = new THREE.GridHelper(1000, 10, 0xEED5B7, 0xEED5B7);
