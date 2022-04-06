@@ -10,7 +10,7 @@ def run():
     可视化桥 = mcom(path='RECYCLE/v2d_logger/', draw_mode='Threejs')
     可视化桥.初始化3D()
     # 可视化桥.设置样式('star')
-    可视化桥.设置样式('creative', selection='creative_v2')
+    可视化桥.设置样式('creative', selection='creative_v4')
     # 可视化桥.设置样式('many star')
 
 
